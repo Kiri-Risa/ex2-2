@@ -1,0 +1,10 @@
+- if object.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      |  フォームに
+      = pluralize(object.errors.count, "つ")
+      | のエラーがあります。
+    ul
+      - object.errors.full_messages.each do |msg|
+        li
+          = msg

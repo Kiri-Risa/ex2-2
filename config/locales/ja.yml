@@ -1,0 +1,37 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      micropost: 投稿
+      relationship: 関係
+      
+    attributes:
+      user:
+        id: ID
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        created_at: 作成日
+        updated_at: 更新日
+        name: 名前
+      micropost:
+        id: ID
+        content: 内容
+        user_id: 投稿者
+        created_at: 作成日
+        updated_at: 更新日
+      relationship:
+        id: ID
+        follower_id: フォロワー
+        followed_id: フォロー
+        created_at: 作成日
+        updated_at: 更新日
+
+    flash:
+      new: 作成しました！
+      updated: 更新しました！
+      failed: 失敗しました！
+      destroy: 削除しました！
+      login: ログインしました！
+      logout: ログアウトしました！
+      limited_access: 不正な侵入です！！
