@@ -1,0 +1,10 @@
+- provide(:title, 'ユーザー一覧')
+h1
+  = t '.title'
+
+= will_paginate
+
+ul class="users"
+  = render @users
+
+= will_paginate
