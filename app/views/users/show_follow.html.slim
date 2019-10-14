@@ -1,7 +1,7 @@
 - provide(:title, @title)
-div class="row"
-  aside class="col-md-4"
-    section class="user_info"
+.row
+  aside.col-md-4
+    section.user_info
       = gravatar_for @user
       h1
         = @user.name
@@ -11,13 +11,13 @@ div class="row"
         b
           | Microposts:
         = @user.microposts.count
-    section class="stats"
+    section.stats
       = render 'shared/stats'
       - if @users.any?
-        div class="user_avatars"
+        .user_avatars
           - @users.each do |user|
             = link_to gravatar_for(user, size: 30), user
-  div class="col-md-8"
+  .col-md-8
     h3
       = @title
     - if @users.any?
