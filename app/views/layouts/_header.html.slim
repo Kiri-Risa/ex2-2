@@ -9,10 +9,10 @@ header.navbar.navbar-fixed-top.navbar-inverse
           = link_to "ヘルプ", help_path
         - if logged_in?
           li
-            = link_to "ユーザー", users_path
+            = link_to "ユーザー一覧", users_path
           li.dropdown
-            a.dropdown-toggle[href="#" data-toggle="dropdown"]
-              |  アカウント 
+            a href="#" class="dropdown-toggle" data-toggle="dropdown"
+              | アカウント
               b.caret
             ul.dropdown-menu
               li

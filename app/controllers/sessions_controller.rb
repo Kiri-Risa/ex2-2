@@ -11,13 +11,13 @@ def create
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
         redirect_back_or @user
       else
-        message  = "アカウントが有効化されていません。"
-        message += "メールの有効化リンクを確認してください。"
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
         flash[:warning] = message
         redirect_to root_url
       end
     else
-      flash.now[:danger] = 'メールアドレスとパスワードの組み合わせが間違っています。'
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end

@@ -6,10 +6,10 @@
       h1
         = @user.name
       span
-        = link_to "プロフィールを見る", @user
+        = link_to "view my profile", @user
       span
         b
-          | 投稿:
+          | Microposts:
         = @user.microposts.count
     section.stats
       = render 'shared/stats'
@@ -21,6 +21,6 @@
     h3
       = @title
     - if @users.any?
-      ul.users.follow
+      ul class="users follow"
         = render @users
       = will_paginate

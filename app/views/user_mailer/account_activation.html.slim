@@ -1,9 +1,12 @@
 h1
   | Sample App
+
 p
-  | Hi 
+  | こんにちは
   = @user.name
-  | ,
+  | さん,
+
 p
-  |  Welcome to the Sample App! Click on the link below to activate your account: 
-= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email)
+  | Sample Appへようこそ! 以下のリンクをクリックして、アカウントを有効化してください:
+
+= link_to "アカウントを有効化", edit_account_activation_url(@user.activation_token, email: @user.email)
