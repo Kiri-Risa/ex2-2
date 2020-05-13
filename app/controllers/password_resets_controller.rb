@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
   before_action :get_user,   only: [:edit, :update]
-  before_action :valid_user, only: [:edit, :update]
+  before_action :valid_check, only: [:edit, :update]
   before_action :check_expiration, only: [:edit, :update]
 
   def new
@@ -15,7 +15,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = "Email address not found"
-      render 'new'
+      render :new
     end
   end
 
@@ -25,14 +25,14 @@ class PasswordResetsController < ApplicationController
   def update
     if params[:user][:password].empty?
       @user.errors.add(:password, :blank)
-      render 'edit'
+      render :edit
     elsif @user.update_attributes(user_params)
       log_in @user
       @user.update_attribute(:reset_digest, nil)
       flash[:success] = "Password has been reset."
       redirect_to @user
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -49,9 +49,9 @@ private
   end
 
   # 有効なユーザーかどうか確認する
-  def valid_user
-    unless (@user && @user.activated? &&
-            @user.authenticated?(:reset, params[:id]))
+  def valid_check
+    unless (@user&.activated? &&
+            @user&.authenticated?(:reset, params[:id]))
       redirect_to root_url
     end
   end

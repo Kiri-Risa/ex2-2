@@ -1,6 +1,6 @@
 = form_for(@micropost) do |f|
   = render 'shared/error_messages', object: f.object
-  <div class="field">
+  .field
     = f.text_area :content, placeholder: "今何をしていますか？"
   = f.submit "投稿", class: "btn btn-primary"
   span.picture
