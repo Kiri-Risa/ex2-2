@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
       else
         flash.now[:error] = "Failed to create Micropost"
         @feed_items = []
-        render 'static_pages/home'
+        render 'pages/home'
       end
     end
   
@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
       else
         flash.now[:error] = "Failed to delete Micropost"
         @feed_items = []
-        render 'static_pages/home'
+        render 'pages/home'
       end
     end
   

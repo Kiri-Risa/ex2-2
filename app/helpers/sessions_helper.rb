@@ -25,9 +25,9 @@ module SessionsHelper
     end
 
     #現在のユーザーを代入する
-    #def user_is_currentuser
-    #  @user ||= current_user
-    #end
+    def assign_currentuser
+      @user ||= current_user
+    end
 
     # 記憶トークンcookieに対応するユーザーを返す
     def current_user
