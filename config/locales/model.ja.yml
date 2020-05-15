@@ -1,0 +1,40 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      relationship: 関係
+      micropost: マイクロポスト
+    attributes:
+        user:
+          id: ID
+          name: 名前
+          email: メールアドレス
+          created_at: 作成日
+          updated_at: 更新日
+          password: パスワード
+          password_confirmation: パスワード確認
+        relationship:
+          id: ID
+          follower_id: フォロワーID
+          followed_id: フォローID
+          created_at: 作成日
+          updated_at: 更新日
+        microposts:
+          id: ID
+          content: 投稿
+          user_id: 投稿者ID
+          created_at: 作成日
+          updated_at: 更新日
+          picture: 画像
+  users:
+    index:
+      title: 'ユーザ一覧'
+    edit:
+      title: 'ユーザ情報を編集'
+    new:
+      title: 'サインアップ'
+  sessions:
+    new:
+      title: 'ログイン'
+      email: 'メールアドレス'
+      password: 'パスワード'
